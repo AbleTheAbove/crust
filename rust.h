@@ -17,14 +17,12 @@
 #define Result_impl(T, E) \
 typedef struct { \
     bool is_valid; \
-    union { \
+    enum { \
         T data; \
         E err; \
     }; \
 } Result_##T##_##E;
-
 #define Result(T, E) Result_##T##_##E
-
 #define Result_unwrap_impl(T, E) \
 T Result_##T##_unwrap (Result(T, E) result) { \
     if (result.is_valid) \
