@@ -1,9 +1,8 @@
-#include <stdio.h>
 #include "rust.h"
 
-fn main() {
-   let_mut_int a = 7;
-   print("Hello, World!\n");
+fn(main(), int) {
+   let_mut(a, int) = 7;
    a += 1;
+   print("Hello, World!\n", a);
    Ok();
 }
